@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel and Resort Booking</title>
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="font-awesome.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <style>
+    .hero{
+   background-image :  url('https://i.pinimg.com/originals/41/36/7b/41367b194e7b4a9e72b67d687a6689a2.jpg');
+    }
+  </style>
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">Hotel-Resort</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero d-flex align-items-center text-white">
+    <div class="container text-center">
+      <h1>Welcome to LuxeBookings</h1>
+      <p>Experience the ultimate in luxury and comfort. Book your stay with us today.</p>
+      <a href="rooms.html" class="btn btn-warning me-2">Book Now</a>
+      <a href="about.html" class="btn btn-outline-light">Learn More</a>
+    </div>
+  </section>
+
+  <!-- search box -->
+
+  <div class="search-section">
+    <h2>Find Your Perfect Stay</h2>
+    <form id="searchForm">
+        <div class="form-row">
+            <!-- Destination and Dates -->
+            <div class="form-group wide">
+                <label for="destination">Destination or Property:</label>
+                <input type="text" id="destination" name="destination" placeholder="Enter a destination or property" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="checkin">Check-in Date:</label>
+                <input type="date" id="checkin" name="checkin" required>
+            </div>
+            <div class="form-group">
+                <label for="checkout">Check-out Date:</label>
+                <input type="date" id="checkout" name="checkout" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <!-- Number of People and Rooms -->
+            <div class="form-group">
+                <label for="adults">Adults:</label>
+                <input type="number" id="adults" name="adults" min="1" max="10" required>
+            </div>
+            <div class="form-group">
+                <label for="children">Children:</label>
+                <input type="number" id="children" name="children" min="0" max="10">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="age">Age of Children (comma-separated):</label>
+                <input type="text" id="age" name="age" placeholder="e.g. 4, 7, 10">
+            </div>
+            <div class="form-group">
+                <label for="rooms">Rooms:</label>
+                <input type="number" id="rooms" name="rooms" min="1" max="5" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <!-- Hotel Preferences -->
+            <div class="form-group">
+                <label for="stars">Star Rating:</label>
+                <select id="stars" name="stars">
+                    <option value="any">Any</option>
+                    <option value="5">5 stars</option>
+                    <option value="4">4 stars</option>
+                    <option value="3">3 stars</option>
+                    <option value="2">2 stars</option>
+                    <option value="1">1 star</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="rating">Guest Rating:</label>
+                <select id="rating" name="rating">
+                    <option value="any">Any</option>
+                    <option value="9">9+ Exceptional</option>
+                    <option value="8">8+ Excellent</option>
+                    <option value="7">7+ Good</option>
+                    <option value="6">6+ Pleasant</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <!-- Price Range -->
+            <div class="form-group wide">
+                <label for="price">Price Range:</label>
+                <input type="range" id="price" name="price" min="0" max="1000" step="50" oninput="this.nextElementSibling.value = this.value">
+                <output>500</output> USD per night
+            </div>
+        </div>
+        <div class="form-row">
+            <!-- Additional Filters -->
+            <div class="form-group wide">
+                <label for="amenities">Amenities:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="wifi" name="amenities" value="wifi">
+                    <label for="wifi">Free Wi-Fi</label>
+                    <input type="checkbox" id="breakfast" name="amenities" value="breakfast">
+                    <label for="breakfast">Breakfast Included</label>
+                    <input type="checkbox" id="pool" name="amenities" value="pool">
+                    <label for="pool">Swimming Pool</label>
+                    <input type="checkbox" id="parking" name="amenities" value="parking">
+                    <label for="parking">Free Parking</label>
+                    <input type="checkbox" id="spa" name="amenities" value="spa">
+                    <label for="spa">Spa</label>
+                </div>
+            </div>
+        </div>
+        <!-- Search Button -->
+        <div class="form-row">
+            <div class="form-group wide">
+                <button type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="js/index.js"></script>
+  <!-- Rooms Section -->
+  <section class="rooms py-5 bg-light">
+    <div class="container text-center">
+      <h2>Our Rooms</h2>
+      <p class="mb-5">Choose from a variety of luxurious rooms and suites.</p>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="images/roomm1.jpg" class="img-fluid mb-3" alt="Room 1">
+          <h4>Deluxe Room</h4>
+          <p>Spacious room with a king-size bed and ocean view.</p>
+        </div>
+        <div class="col-md-4">
+          <img src="images/roomm2.jpg" class="img-fluid mb-3" alt="Room 2">
+          <h4>Suite</h4>
+          <p>Elegant suite with a separate living area and balcony.</p>
+        </div>
+        <div class="col-md-4">
+          <img src="images/roomm3.jpg" class="img-fluid mb-3" alt="Room 3">
+          <h4>Penthouse</h4>
+          <p>Luxurious penthouse with panoramic views and private pool.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="row">
+            <div class="col-md-4">
+              <h4>About Us</h4>
+              <p>LuxeBookings offers luxury and comfort with a wide range of services and accommodations.</p>
+            </div>
+            <div class="col-md-4">
+              <h4>Links</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contacttt.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h4>Contact</h4>
+              <p><i class="fas fa-map-marker-alt"></i> Gujarat , Ahmedabad</p>
+              <p><i class="fas fa-phone"></i> +91 7490044190</p>
+              <p><i class="fas fa-envelope"></i> info@luxebookings.com</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-6">
+              <p>&copy; 2024 LuxeBookings. All rights reserved.</p>
+            </div>
+            <div class="col-md-6">
+              <ul class="social-icons text-end">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">LinkedIn</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+<script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>
